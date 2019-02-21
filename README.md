@@ -1,5 +1,8 @@
 # sa_timeline
 
+# 预览图
+![]（https://github.com/sallenhandong/mpvue_timeline/blob/master/1550723706.jpg）
+
 > A Mpvue project
 
 ## Build Setup
