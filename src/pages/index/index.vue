@@ -6,7 +6,7 @@
         </div>
         <div class="timeLineDiv">
                <div v-for="(item, index) in listArr" :key="index">
-            <timeLine :obj='item' :index='index' :maxLength='listArr.length' ></timeLine>
+            <timeLine :obj='item' :index='index' :maxLength='listArr.length' :saClass="'sa_timeClass_Dot'"></timeLine>
         </div>
         </div>
     </div>
@@ -17,8 +17,6 @@ import timeLine from "@/components/saTimeLine";
 export default {
   data() {
     return {
-      title: "阿里巴巴",
-      content: "授权回话资源背景调查",
        listArr: [
         {
           title: "setp 1",
@@ -34,6 +32,16 @@ export default {
         },{
           title: "setp 3",
           content: "To the time to life, rather than to life in time to the time to life, rather than to life in time.给时光以生命，而不是给生命以时光。",
+          id:'2',
+           isSelect:'0'
+        },{
+          title: "setp 4",
+          content: "Whatever is worth doing is worth doing well.任何值得做的，就把它做好。",
+          id:'2',
+           isSelect:'0'
+        },{
+          title: "setp 5",
+          content: "You may be out of my sight, but never out of my mind.你也许已走出我的视线，但从未走出我的思念。",
           id:'2',
            isSelect:'0'
         }
