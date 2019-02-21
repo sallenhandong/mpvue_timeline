@@ -1,33 +1,57 @@
 <template>
   <div>
-    <div class="listDiv">
+    <div :class="saClass">
       <div :class="index==0?'listDivItemFirst':'listDivItem'">
-        <div :class="obj.isSelect=='1'?'circleSelect':'circle'">{{index + 1}}</div>
+        <div v-if="saClass=='sa_timeClass_Dot'">
+          <div class="style1_circle">
+            <div class="style1_circle_dot"></div>
+          </div>
+        </div>
+        <block v-else-if="saClass=='sa_timeClass_Number'">
+          <div :class="obj.isSelect=='1'?'circleSelect':'circle'">{{index + 1}}</div>
+        </block>
         <div class="timeLinelineTitle">{{obj.title}}</div>
       </div>
       <div :class="index==maxLength-1?'listDivItem1End':'listDivItem1'">
-        <div  :class="index==maxLength-1?'timeLinelineEnd':'timeLineline'" v-bind:style="{ backgroundColor: lineColor }"></div>
-        <div class="timeLinecontent">{{obj.content}}</div>
+        <div
+          :class="index==maxLength-1?'timeLinelineEnd':'timeLineline'"
+          v-bind:style="{ backgroundColor: lineColor }"
+        ></div>
+        <block v-if="saClass=='sa_timeClass_Dot'">
+          <div class="contentContainer">
+            <div class="timeLinecontent">{{obj.content}}</div>
+            <div class="dividing_line"></div>
+          </div>
+        </block>
+        <block v-else-if="saClass=='sa_timeClass_Number'">
+          <div class="timeLinecontent">{{obj.content}}</div>
+        </block>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-   data() {
-    return {
-    
-    };
+  data() {
+    return {};
   },
-    //   "state":''
-    //   "title":''
-    //   "content":''
-    //   "index":''
-    //   "id",:''
-    //   "isSelect":''
-  props: ['obj','index','maxLength','lineColor'
-  ],
-  
+  //   "state":''
+  //   "title":''
+  //   "content":''
+  //   "index":''
+  //   "id",:''
+  //   "isSelect":''
+  props: ["obj", "index", "maxLength", "lineColor", "saClass"],
+  created (){
+          let t;
+      clearTimeout(t);
+      t = setTimeout(
+        function() {
+          console.log(this.saClass);
+        }.bind(this),
+        3000
+      );
+  }
 };
 </script>
 <style>
@@ -101,5 +125,65 @@ export default {
   height: 0rpx;
   margin-left: 70rpx;
   margin-right: 52rpx;
+}
+.style1_circle {
+  width: 40rpx;
+  height: 40rpx;
+  color: #999999;
+  background-color: white;
+  border-radius: 50%;
+  border: 2rpx solid rgba(53, 210, 250, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0rpx 0rpx 10rpx rgba(53, 210, 250, 1);
+}
+.sa_timeClass_Dot {
+  display: flex;
+  flex-direction: column;
+}
+.style1_circle_dot {
+  width: 20rpx;
+  height: 20rpx;
+  background-color: rgba(53, 210, 250, 1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0rpx 0rpx 10rpx rgba(53, 210, 250, 1);
+}
+.style1_circle_dot_clean {
+  width: 0rpx;
+  height: 0rpx;
+}
+.sa_timeClass_Dot .timeLineline {
+  width: 4rpx;
+  background-color: rgba(53, 210, 250, 1);
+  margin-left: 62rpx;
+  margin-right: 44rpx;
+  box-shadow: 0rpx 0rpx 10rpx rgba(53, 210, 250, 1);
+}
+.sa_timeClass_Dot .timeLinelineEnd {
+  height: 0rpx;
+  margin-left: 70rpx;
+  margin-right: 40rpx;
+}
+.sa_timeClass_Dot .timeLinelineTitle {
+  font-size: 30rpx;
+  color: #363636;
+  font-weight: 650;
+  margin-left: 20rpx;
+  margin-top: -10rpx;
+}
+.sa_timeClass_Dot .contentContainer {
+  display: flex;
+  flex-direction: column;
+}
+.dividing_line {
+  margin-bottom: 20rpx;
+  height: 2rpx;
+  width: 600rpx;
+  border: none;
+  border-bottom: 2rpx dotted lightgray;
 }
 </style>
