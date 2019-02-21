@@ -4,6 +4,9 @@
 
 ![效果图](https://github.com/sallenhandong/mpvue_timeline/blob/master/1550723706.jpg)
 
+# Feature
+* 自定义颜色
+
 > A Mpvue project
 
 ## Build Setup
