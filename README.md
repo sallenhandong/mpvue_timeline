@@ -1,6 +1,6 @@
 # sa_timeline
 
-## 预览图
+### 预览图
 ![sa_timeClass_Number](https://github.com/sallenhandong/mpvue_timeline/blob/master/1550732585(1).jpg)
 ![sa_timeClass_Dot](https://github.com/sallenhandong/mpvue_timeline/blob/master/1550732605(1).jpg)
 
@@ -9,6 +9,7 @@
 * 引入即用
 * 根据需求在自定义颜色即可
 ## How to use?
+```
  listArr: [
         {
           title: "setp 1",
@@ -38,6 +39,7 @@
            isSelect:'0'
         }
       ]
+```
 ```
      <div v-for="(item, index) in listArr" :key="index">
             <timeLine :obj='item' :index='index' :maxLength='listArr.length' :saClass="'sa_timeClass_Dot'"></timeLine>
