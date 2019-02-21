@@ -2,7 +2,9 @@
 
 ## 预览图
 
-![效果图](https://github.com/sallenhandong/mpvue_timeline/blob/master/1550732585(1).jpg)
+![sa_timeClass_Number](https://github.com/sallenhandong/mpvue_timeline/blob/master/1550732585(1).jpg)
+![sa_timeClass_Dot](https://github.com/sallenhandong/mpvue_timeline/blob/master/1550732605(1).jpg)
+
 
 ## Feature
 * 自定义颜色
