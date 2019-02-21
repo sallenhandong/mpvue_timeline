@@ -1,14 +1,20 @@
 # sa_timeline
 
 ## 预览图
-* sa_timeClass_Number
 ![sa_timeClass_Number](https://github.com/sallenhandong/mpvue_timeline/blob/master/1550732585(1).jpg)
-* sa_timeClass_Dot
 ![sa_timeClass_Dot](https://github.com/sallenhandong/mpvue_timeline/blob/master/1550732605(1).jpg)
 
 
 ## Feature
 * 自定义颜色
+* sa_timeClass_Dot
+* sa_timeClass_Number
+## How to use?
+```
+     <div v-for="(item, index) in listArr" :key="index">
+            <timeLine :obj='item' :index='index' :maxLength='listArr.length' :saClass="'sa_timeClass_Dot'"></timeLine>
+        </div>
+```
 
 > A Mpvue project
 
