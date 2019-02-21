@@ -41,21 +41,11 @@ export default {
   //   "index":''
   //   "id",:''
   //   "isSelect":''
-  props: ["obj", "index", "maxLength", "lineColor", "saClass"],
-  created (){
-          let t;
-      clearTimeout(t);
-      t = setTimeout(
-        function() {
-          console.log(this.saClass);
-        }.bind(this),
-        3000
-      );
-  }
+  props: ["obj", "index", "maxLength", "lineColor", "saClass"]
 };
 </script>
 <style>
-.listDiv {
+.sa_timeClass_Number,.sa_timeClass_Dot  {
   display: flex;
   flex-direction: column;
 }
